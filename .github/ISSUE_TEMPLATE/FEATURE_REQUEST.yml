@@ -51,6 +51,19 @@ body:
   - type: markdown
     attributes:
       value: |
+        ## 🛠️ Contribute
+        It would be amazing if you can contribute to the project! This project is open source, free to use, and maintained by volunteers. This could be a great opportunity to give back and improve the project for everyone, including yourself.
+
+  - type: checkboxes
+    attributes:
+      label: Contributions
+      options:
+        - label: I plan to open a pull request for this issue
+        - label: I plan to make a financial contribution to this project
+
+  - type: markdown
+    attributes:
+      value: |
         ## 🚀 Need immediate attention?
         Escalate this issue by becoming a [_Priority Patron_ sponsor](https://github.com/sponsors/privatenumber)! As a _Priority Patron_, your concern will receive prompt attention, ensuring faster and more efficient resolution.
 
