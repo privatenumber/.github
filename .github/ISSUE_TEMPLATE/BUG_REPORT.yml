@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        > 💁‍♂️ Please remember others are volunteering to help you for free, and put in your best effort to follow this form.
+        > 💁‍♂️ Keep in mind this is a collaborative effort. Please do your best to debug, communicate, and demonstrate the problem.
 
         ## 👀 Tell us about the bug
         A _clear and concise_ description of what the bug is.
@@ -46,7 +46,7 @@ body:
             Do you have unnecessary dependencies, scripts, properties in `package.json`?
 
         2. Delete all unnecessary code. Reduce the scope.
-  
+
             Try to narrow the scope of the reproduction as much as possible.
             Is it a frontend or backend problem? Delete the other.
             Ideally, the code is reduced to a few lines of code in a single file.
