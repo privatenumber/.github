@@ -45,7 +45,7 @@ body:
             Delete irrelevant files (e.g. `LICENSE`, `.npmrc`, `.github`).
             Do you have unnecessary dependencies, scripts, properties in `package.json`?
 
-        2. Delete all unnecessary code.
+        2. Delete all unnecessary code. Reduce the scope.
   
             Try to narrow the scope of the reproduction as much as possible.
             Is it a frontend or backend problem? Delete the other.
