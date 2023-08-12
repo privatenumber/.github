@@ -13,6 +13,7 @@ body:
   - type: textarea
     attributes:
       label: Problem
+      description: Please refrain from describing anything other than the problem.
       placeholder: |
         What's the problem?
         Do you have an error stack trace?

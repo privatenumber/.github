@@ -4,14 +4,17 @@ labels: [enhancement, pending triage]
 body:
   - type: markdown
     attributes:
-      value: "## 👀 Tell us about your idea"
+      value: |
+        > 💁‍♂️ Please remember others are volunteering to help you for free, and put in your best effort to follow this form.
+
+        ## 👀 Tell us about your idea
 
   - type: textarea
     attributes:
       label: Feature request
-      description: A clear and concise description of the feature you would like.
+      description: A clear and concise description of the feature.
       placeholder: |
-        When using this project, I would love to be able to...
+        I would love to be able to...
     validations:
       required: true
 
