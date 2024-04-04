@@ -4,16 +4,15 @@ body:
       value: |
         ## 💬 What's your question?
 
-        <details>
-          <summary><em>Need some pointers on crafting your question?</em></summary>
+        1. **Keep it short:** Start with a question. Get to the point. The longer the text, the less reads it gets.
+        2. **Write clearly:** Confusing questions are ignored. Use a spelling & grammar checker, ChatGPT, etc.
+        3. **Include context:** Attach code snippets, configurations, errors, and screenshots.
+        4. **Proof-read:** Pretend you're a stranger online. Would you understand your question?
 
-          <br>
-
-          1. **Start succinctly:** Jump to the point with a concise question.
-          2. **Conciseness matters:** Keep it brief yet specific; avoid lengthy explanations.
-          3. **Include code:** Attach relevant code snippets, configurations, and errors.
-          4. **Add screenshots:** If applicable, provide screenshots.
-        </details>
+        > [!TIP]
+        > **🚀 Get help from the maintainer**
+        >
+        > Sponsor this project and get access to [_Exclusive support_](https://github.com/sponsors/privatenumber) where you can get my help!
 
   - type: textarea
     id: improvements
@@ -21,12 +20,3 @@ body:
       label: Question
     validations:
       required: true
-
-  - type: markdown
-    attributes:
-      value: |
-        <br>
-
-        > **🚀 Try _Priority Support_!**
-        >
-        > If you're in a pinch, don't hesitate to take advantage of my [_Priority Support_ service](https://github.com/sponsors/privatenumber) where you can ask me questions in an exclusive forum. I'm well equppied to assist you with this project and would be happy to help you out! 🙂
