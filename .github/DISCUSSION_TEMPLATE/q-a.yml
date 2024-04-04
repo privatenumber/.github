@@ -4,8 +4,8 @@ body:
       value: |
         ## 💬 What's your question?
 
-        1. **Keep it short:** Start with a question. Get to the point. The longer the text, the less reads it gets.
-        2. **Write clearly:** Confusing questions are ignored. Use a spelling & grammar checker, ChatGPT, etc.
+        1. **Keep it short:** Start with the question. The longer the text, the less reads it gets.
+        2. **Write clearly:** Use a spelling & grammar checker, ChatGPT, etc.
         3. **Include context:** Attach code snippets, configurations, errors, and screenshots.
         4. **Proof-read:** Pretend you're a stranger online. Would you understand your question?
 
