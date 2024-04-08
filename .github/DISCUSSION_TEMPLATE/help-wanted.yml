@@ -1,0 +1,21 @@
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 💬 What do you need help with?
+
+        1. **Keep it concise:** Start with the question. The shorter the text, the more reads it gets.
+        2. **Write clearly:** Use a spelling & grammar checker, ChatGPT, etc.
+        3. **Include context:** Attach code snippets, configurations, errors, and screenshots.
+        4. **Proof-read:** Pretend you're a stranger online. Would you understand your question?
+
+        > [!TIP]
+        > **🚀 Get help from the maintainer**
+        >
+        > Sponsor this project and get access to [_Exclusive support_](https://github.com/sponsors/privatenumber) where you can get my help!
+
+  - type: textarea
+    attributes:
+      label: Question
+    validations:
+      required: true
