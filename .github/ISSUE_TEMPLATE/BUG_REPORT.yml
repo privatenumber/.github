@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        > 💁‍♂️ Keep in mind this is a collaborative effort. Please do your best to debug, communicate, and demonstrate the problem.
+        💁‍♂️ This is a collaborative effort. Please do your best to debug, communicate, and demonstrate the problem.
 
         ## 👀 Tell us about the bug
         A _clear and concise_ description of what the bug is.
@@ -32,43 +32,23 @@ body:
   - type: markdown
     attributes:
       value: |
-        ## 📋 Minimal reproduction
-        > ⚠️ If a **minimal** reproduction is not provided, **the issue will be closed.**
+        ## 📋 Show us the bug
 
-        The minimal reproduction proves a bug exists in this project, allows others to debug it for you, and streamlines resolution.
+        > [!CAUTION]
+        > Without proving the bug is in this project via *minimal* reproduction, your issue will be closed without response.
 
-        <details>
-          <summary><strong>How do I create a minimal reproduction?</strong></summary>
+        The minimal reproduction is the core of your issue. This is usually all we read.
 
-        1. Delete all unnecessary files and data. Keep it under 10 files.
+        The first thing we'll do is scrutinize every code, file, and dependency to see how they impact the bug. If you can delete it and still produce the bug, it's not needed.
 
-            Delete irrelevant files (e.g. `LICENSE`, `.npmrc`, `.github`).
-            Do you have unnecessary dependencies, scripts, properties in `package.json`?
+        Upload your reproduction to [StackBlitz](https://stackblitz.com) or a GitHub repository and use GitHub Actions to show the error.
 
-        2. Delete all unnecessary code. Reduce the scope.
-
-            Try to narrow the scope of the reproduction as much as possible.
-            Is it a frontend or backend problem? Delete the other.
-            Ideally, the code is reduced to a few lines of code in a single file.
-
-        3. Set the `start` script in `package.json` to the command that demonstrates the bug.
-
-        4. Verify the reproduction.
-
-            Try running it yourself, and check:
-            - Is the problem immediately reproducible?
-            - Are dependencies properly declared?
-            - Could I find more files or code that isn't necessary?
-
-        5. Upload the reproduction to [StackBlitz](https://stackblitz.com), or a new GitHub repository, so it can be opened in the browser.
-        </details>
-
-        The _smaller_ the reproduction, the _faster_ others can help you.
+        Please do your best to _show_ the bug rather than talking about it. This will lead to a speedy resolution.
 
   - type: input
     attributes:
       label: Minimal reproduction URL
-      placeholder: https://stackblitz.com/edit/...
+      placeholder: https://github.com/...
     validations:
       required: true
 
@@ -125,14 +105,18 @@ body:
     attributes:
       value: |
         ## 🛠️ Contribute
-        It would be amazing if you can contribute to the project! This project is open source, free to use, and maintained by volunteers. This could be a great opportunity to give back and improve the project for everyone, including yourself.
 
   - type: checkboxes
     attributes:
-      label: Contributions
+      label: Bugs are expected to be fixed by those affected by it
       options:
-        - label: I plan to open a pull request for this issue
-        - label: I plan to make a financial contribution to this project
+        - label: I'm interested in working on this issue
+
+  - type: checkboxes
+    attributes:
+      label: Compensating engineering work financially will speed up resolution
+      options:
+        - label: I'm willing to offer financial support
 
   - type: markdown
     attributes:

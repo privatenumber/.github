@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        > 💁‍♂️ Please remember others are volunteering to help you for free, and put in your best effort to follow this form.
+        💁‍♂️ Please remember this is a community of volunteers and put in your best effort to follow this form.
 
         ## 👀 Tell us about your idea
 
@@ -55,14 +55,18 @@ body:
     attributes:
       value: |
         ## 🛠️ Contribute
-        It would be amazing if you can contribute to the project! This project is open source, free to use, and maintained by volunteers. This could be a great opportunity to give back and improve the project for everyone, including yourself.
 
   - type: checkboxes
     attributes:
-      label: Contributions
+      label: Bugs are expected to be fixed by those affected by it
       options:
-        - label: I plan to open a pull request for this issue
-        - label: I plan to make a financial contribution to this project
+        - label: I'm interested in working on this issue
+
+  - type: checkboxes
+    attributes:
+      label: Compensating engineering work financially will speed up resolution
+      options:
+        - label: I'm willing to offer financial support
 
   - type: markdown
     attributes:
