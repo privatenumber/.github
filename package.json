@@ -6,6 +6,7 @@
 	},
 	"devDependencies": {
 		"md-pen": "^1.2.0",
-		"mdeval": "^1.6.0"
+		"mdeval": "^1.6.0",
+		"nano-spawn": "^2.1.0"
 	}
 }
