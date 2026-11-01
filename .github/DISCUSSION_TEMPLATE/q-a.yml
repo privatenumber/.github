@@ -9,14 +9,13 @@ body:
         3. **Include context:** Attach code snippets, configurations, errors, and screenshots.
         4. **Proof-read:** Pretend you're a stranger online. Would you understand your question?
 
-        > [!TIP]
-        > **🚀 Get help from the maintainer**
-        >
-        > Sponsor this project and get access to [_Exclusive support_](https://github.com/sponsors/privatenumber) where you can get my help!
-
   - type: textarea
-    id: improvements
     attributes:
       label: Question
     validations:
       required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        💖 These projects are free and maintained by one person. If they help you, [sponsor](https://github.com/sponsors/privatenumber) monthly or with a one-time donation.
