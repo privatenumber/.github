@@ -13,11 +13,53 @@ These files apply to every [@privatenumber](https://github.com/privatenumber) re
 
 ### Overrides
 
-A repository with its own `.github/ISSUE_TEMPLATE` folder ignores the default issue templates entirely. These repositories have their own templates, so update them too when changing the defaults:
+A repository with its own `.github/ISSUE_TEMPLATE` folder ignores the default issue templates entirely. These public repositories have their own templates, so update them too when changing the defaults.
 
-- [tsx](https://github.com/privatenumber/tsx/tree/master/.github/ISSUE_TEMPLATE)
-- [esbuild-loader](https://github.com/privatenumber/esbuild-loader/tree/master/.github/ISSUE_TEMPLATE)
-- [cleye](https://github.com/privatenumber/cleye/tree/master/.github/ISSUE_TEMPLATE)
+Refresh the list with `npx mdeval README.md` (requires an authenticated [`gh`](https://cli.github.com)).
+
+<!--mdeval
+const query = `query($endCursor: String) {
+	user(login: "privatenumber") {
+		repositories(first: 100, after: $endCursor, privacy: PUBLIC, isFork: false, ownerAffiliations: OWNER, orderBy: { field: NAME, direction: ASC }) {
+			pageInfo { hasNextPage endCursor }
+			nodes {
+				name
+				url
+				isArchived
+				defaultBranchRef { name }
+				object(expression: "HEAD:.github/ISSUE_TEMPLATE") { ... on Tree { entries { name } } }
+			}
+		}
+	}
+}`;
+
+const pages = JSON.parse((await $`gh api graphql --paginate --slurp -f query=${query}`).stdout);
+
+const overrides = pages
+	.flatMap(page => page.data.user.repositories.nodes)
+	.filter(repo => repo.object && !repo.isArchived && repo.name !== '.github');
+
+const overridesTable = [
+	'| Repository | Templates |',
+	'| - | - |',
+	...overrides.map(repo => `| [${repo.name}](${repo.url}/tree/${repo.defaultBranchRef.name}/.github/ISSUE_TEMPLATE) | ${repo.object.entries.map(entry => `\`${entry.name}\``).join(', ')} |`),
+].join('\n');
+-->
+
+<!--mdeval block(overridesTable)-->
+| Repository | Templates |
+| - | - |
+| [cleye](https://github.com/privatenumber/cleye/tree/master/.github/ISSUE_TEMPLATE) | `BUG_REPORT.yml`, `FEATURE_REQUEST.yml`, `config.yml` |
+| [esbuild-loader](https://github.com/privatenumber/esbuild-loader/tree/master/.github/ISSUE_TEMPLATE) | `bug-report.yml`, `config.yml`, `feature-request.yml` |
+| [fs-require](https://github.com/privatenumber/fs-require/tree/develop/.github/ISSUE_TEMPLATE) | `BUG_REPORT.md`, `FEATURE_REQUEST.md` |
+| [git-detect-case-change](https://github.com/privatenumber/git-detect-case-change/tree/develop/.github/ISSUE_TEMPLATE) | `BUG_REPORT.md`, `FEATURE_REQUEST.md` |
+| [ink-task-list](https://github.com/privatenumber/ink-task-list/tree/develop/.github/ISSUE_TEMPLATE) | `BUG_REPORT.md`, `FEATURE_REQUEST.md` |
+| [instant-mocha](https://github.com/privatenumber/instant-mocha/tree/develop/.github/ISSUE_TEMPLATE) | `BUG_REPORT.yml`, `FEATURE_REQUEST.yml`, `config.yml` |
+| [snap-tweet](https://github.com/privatenumber/snap-tweet/tree/develop/.github/ISSUE_TEMPLATE) | `BUG_REPORT.md`, `FEATURE_REQUEST.md` |
+| [tasuku](https://github.com/privatenumber/tasuku/tree/master/.github/ISSUE_TEMPLATE) | `BUG_REPORT.md`, `FEATURE_REQUEST.md` |
+| [tsx](https://github.com/privatenumber/tsx/tree/master/.github/ISSUE_TEMPLATE) | `bug-report.yml`, `config.yml` |
+| [webpack-localize-assets-plugin](https://github.com/privatenumber/webpack-localize-assets-plugin/tree/develop/.github/ISSUE_TEMPLATE) | `BUG_REPORT.md`, `FEATURE_REQUEST.md` |
+<!--/mdeval-->
 
 ### Labels
 
