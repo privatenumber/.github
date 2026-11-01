@@ -18,13 +18,15 @@ A repository with its own `.github/ISSUE_TEMPLATE` folder ignores the default is
 Refresh the list with `pnpm readme`, or print it as JSON with `node scripts/find-template-overrides.js`. Both require an authenticated [`gh`](https://cli.github.com).
 
 <!--mdeval
+import { table, link, code } from 'md-pen';
 import { findTemplateOverrides } from './scripts/find-template-overrides.js';
 
-const overridesTable = [
-	'| Repository | Templates |',
-	'| - | - |',
-	...(await findTemplateOverrides()).map(repo => `| [${repo.name}](${repo.url}) | ${repo.templates.map(name => `\`${name}\``).join(', ')} |`),
-].join('\n');
+const overridesTable = table(
+	(await findTemplateOverrides()).map(repo => ({
+		Repository: link(repo.url, repo.name),
+		Templates: repo.templates.map(name => code(name)).join(', '),
+	})),
+);
 -->
 
 <!--mdeval block(overridesTable)-->
