@@ -1,0 +1,10 @@
+{
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"readme": "mdeval README.md"
+	},
+	"devDependencies": {
+		"mdeval": "^1.6.0"
+	}
+}

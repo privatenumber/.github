@@ -15,34 +15,15 @@ These files apply to every [@privatenumber](https://github.com/privatenumber) re
 
 A repository with its own `.github/ISSUE_TEMPLATE` folder ignores the default issue templates entirely. These public repositories have their own templates, so update them too when changing the defaults.
 
-Refresh the list with `npx mdeval README.md` (requires an authenticated [`gh`](https://cli.github.com)).
+Refresh the list with `pnpm readme`, or print it as JSON with `node scripts/find-template-overrides.js`. Both require an authenticated [`gh`](https://cli.github.com).
 
 <!--mdeval
-const query = `query($endCursor: String) {
-	user(login: "privatenumber") {
-		repositories(first: 100, after: $endCursor, privacy: PUBLIC, isFork: false, ownerAffiliations: OWNER, orderBy: { field: NAME, direction: ASC }) {
-			pageInfo { hasNextPage endCursor }
-			nodes {
-				name
-				url
-				isArchived
-				defaultBranchRef { name }
-				object(expression: "HEAD:.github/ISSUE_TEMPLATE") { ... on Tree { entries { name } } }
-			}
-		}
-	}
-}`;
-
-const pages = JSON.parse((await $`gh api graphql --paginate --slurp -f query=${query}`).stdout);
-
-const overrides = pages
-	.flatMap(page => page.data.user.repositories.nodes)
-	.filter(repo => repo.object && !repo.isArchived && repo.name !== '.github');
+import { findTemplateOverrides } from './scripts/find-template-overrides.js';
 
 const overridesTable = [
 	'| Repository | Templates |',
 	'| - | - |',
-	...overrides.map(repo => `| [${repo.name}](${repo.url}/tree/${repo.defaultBranchRef.name}/.github/ISSUE_TEMPLATE) | ${repo.object.entries.map(entry => `\`${entry.name}\``).join(', ')} |`),
+	...(await findTemplateOverrides()).map(repo => `| [${repo.name}](${repo.url}) | ${repo.templates.map(name => `\`${name}\``).join(', ')} |`),
 ].join('\n');
 -->
 
