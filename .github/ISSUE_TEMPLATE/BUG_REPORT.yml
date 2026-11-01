@@ -5,7 +5,7 @@ body:
   - type: textarea
     attributes:
       label: Reproduction
-      description: The smallest code that shows the bug. A code snippet with the command to run it, a GitHub repository, or a [StackBlitz](https://node.new) link.
+      description: The smallest code that shows the bug. A code snippet with the command to run it, a GitHub repository, or a [StackBlitz](https://node.new) link. Include every file it needs, such as `package.json` and `tsconfig.json`.
       placeholder: |
         ```js
         // index.js
@@ -18,22 +18,35 @@ body:
   - type: textarea
     attributes:
       label: Expected and actual behavior
-      description: Include any error output.
-    validations:
-      required: true
-
-  - type: input
-    attributes:
-      label: Version
-      placeholder: v0.0.0
+      description: Paste errors as text, not screenshots.
     validations:
       required: true
 
   - type: textarea
     attributes:
-      label: Environment
-      description: Output of `npx envinfo --system --binaries`
-      render: shell
+      label: Versions
+      description: Exact versions of this package, Node.js, and any related tools (such as TypeScript or Vite). "latest" isn't a version.
+      placeholder: |
+        - Package: 1.2.3
+        - Node.js: 24.11.0
+        - OS: macOS 15
+        - Package manager: pnpm 10.1.0
+    validations:
+      required: true
+
+  - type: input
+    attributes:
+      label: Last working version
+      description: If this is a regression, the last version without the bug.
+
+  - type: checkboxes
+    attributes:
+      label: Checklist
+      options:
+        - label: I searched existing issues
+          required: true
+        - label: I ran the reproduction on the latest version and it shows the bug
+          required: true
 
   - type: checkboxes
     attributes:
