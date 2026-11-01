@@ -6,6 +6,7 @@ These files apply to every [@privatenumber](https://github.com/privatenumber) re
 | - | - |
 | [`.github/ISSUE_TEMPLATE/`](.github/ISSUE_TEMPLATE) | Bug report and feature request forms |
 | [`.github/DISCUSSION_TEMPLATE/q-a.yml`](.github/DISCUSSION_TEMPLATE/q-a.yml) | Form for the Q&A discussion category |
+| [`CONTRIBUTING.md`](CONTRIBUTING.md) | Bug report checklist for issues filed without the form |
 | [`FUNDING.yml`](FUNDING.yml) | Sponsor button |
 | [`SECURITY.md`](SECURITY.md) | How to report vulnerabilities |
 | [`SUPPORT.md`](SUPPORT.md) | Where to get help |
