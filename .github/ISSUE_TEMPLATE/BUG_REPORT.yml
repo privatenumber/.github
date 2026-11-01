@@ -2,6 +2,11 @@ name: 🐛 Bug report
 description: Report a bug
 labels: [bug, pending triage]
 body:
+  - type: markdown
+    attributes:
+      value: |
+        💡 Even better than an issue: open a pull request with a failing test that proves the bug. It doesn't need an issue or a fix.
+
   - type: textarea
     attributes:
       label: Reproduction
@@ -52,7 +57,7 @@ body:
     attributes:
       label: Contribute
       options:
-        - label: I'd like to open a PR to fix this
+        - label: I'd like to open a PR with a failing test or a fix
 
   - type: markdown
     attributes:
