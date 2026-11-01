@@ -14,3 +14,8 @@ body:
       label: Question
     validations:
       required: true
+
+  - type: markdown
+    attributes:
+      value: |
+        💖 These projects are free and maintained by one person. If they help you, [sponsor](https://github.com/sponsors/privatenumber) monthly or with a one-time donation.

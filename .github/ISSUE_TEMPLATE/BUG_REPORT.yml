@@ -1,38 +1,30 @@
 name: 🐛 Bug report
-description: Something not working as expected? Let us know.
+description: Report a bug
 labels: [bug, pending triage]
 body:
-  - type: markdown
+  - type: textarea
     attributes:
-      value: |
-        Thanks for taking the time to report a bug!
+      label: Reproduction
+      description: The smallest code that shows the bug. A code snippet with the command to run it, a GitHub repository, or a [StackBlitz](https://node.new) link.
+      placeholder: |
+        ```js
+        // index.js
+        ```
 
-        The fastest way to get a bug fixed is a **minimal reproduction**: the smallest project that shows the problem. Reports with one are looked at first. If you can't make one, describe the steps to reproduce instead.
-
-  - type: input
-    attributes:
-      label: Minimal reproduction URL
-      description: A [StackBlitz](https://stackblitz.com) link or a GitHub repository. Remove any code, file, or dependency that isn't needed to show the bug.
-      placeholder: https://stackblitz.com/...
+        $ node index.js
+    validations:
+      required: true
 
   - type: textarea
     attributes:
-      label: What happened?
-      description: What you expected, what happened instead, and any error output.
-      placeholder: |
-        Steps to reproduce:
-        1. ...
-
-        Expected:
-
-        Actual:
+      label: Expected and actual behavior
+      description: Include any error output.
     validations:
       required: true
 
   - type: input
     attributes:
       label: Version
-      description: The version of this project where you see the bug.
       placeholder: v0.0.0
     validations:
       required: true
@@ -40,11 +32,8 @@ body:
   - type: textarea
     attributes:
       label: Environment
-      description: Anything that might be relevant, such as your Node.js version, package manager, and operating system.
-      placeholder: |
-        - Node.js: v24.0.0
-        - Package manager: pnpm
-        - OS: macOS
+      description: Output of `npx envinfo --system --binaries`
+      render: shell
 
   - type: checkboxes
     attributes:
@@ -55,4 +44,4 @@ body:
   - type: markdown
     attributes:
       value: |
-        These projects are maintained in my free time. [Sponsoring](https://github.com/sponsors/privatenumber) helps keep them going.
+        💖 These projects are free and maintained by one person. If they help you, [sponsor](https://github.com/sponsors/privatenumber) monthly or with a one-time donation.
